@@ -1,0 +1,228 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.logo img {
+    max-width: 300px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Ensure header is on top */
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #ccc;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333; /* Default color */
+    padding: 8px 12px;
+    border-radius: 0; /* Remove rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+}
+
+header nav ul li a:hover {
+    background-color: #eee;
+    color: #333; /* Hover color */
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+header.scroll {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent header on scroll */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Lora', serif;
+    font-size: 1.5em;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #333;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #eee;
+}
+
+main {
+    padding-top: 80px; /* Adjust for fixed header */
+}
+
+section {
+    padding: 20px 20px;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+	padding-top: 100px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.service-nav {
+    background-color: #f0f0f0;
+    padding: 5px 0; /* Adjusted padding */
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.service-nav h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.service-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.service-nav ul li a:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.service-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.service-description h1 {
+    font-family: 'Lora', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.service-description p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contact {
+    background-color: #c9c9c9; /* Darkest grey for Contact section */
+}
+
+.contact .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact h2 {
+    font-family: 'Lora', serif; /* Change font to Lora */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Link colors */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+a:active {
+    color: #0056b3;
+}
+
+/* Ensure section titles use the Lora font */
+.section-title {
+    font-family: 'Lora', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
