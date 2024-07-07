@@ -13,12 +13,18 @@
         <div class="container">
             <div class="logo"><a href="#top"><img src="images/MG-logo.png" alt="M Gregory Legal Logo"></a></div>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="close-btn" id="close-btn">&times;</div>
             </nav>
         </div>
     </header>
@@ -28,36 +34,40 @@
         <section id="about" class="about">
             <div class="main-photo-text">
                 A niche legal practice<br>
-                specialising in local government, native title, development<br>
+                specialising in local government, native title, planning law development<br>
                 and commercial law, based in West Perth.
             </div>
             <div class="main-photo slideshow-container">
-                <div class="mySlides">
-                    <img src="images/dry-lands.jpg" style="width:110%" alt="tidal flat">
+                <div class="mySlides fade">
+                    <img src="images/dry-lands.jpg" alt="tidal flat">
                 </div>
-                <div class="mySlides">
-                    <img src="images/salt-lake.jpg" style="width:110%" alt="salt pond">
+                <div class="mySlides fade">
+                    <img src="images/Pilbara-landscape.jpg" alt="australian outback">
                 </div>
-                <div class="mySlides">
-                    <img src="images/book.jpg" style="width:110%" alt="open book">
+                <div class="mySlides fade">
+                    <img src="images/salt-lake.jpg" alt="salt pond">
                 </div>
-                <div class="mySlides">
-                    <img src="images/architecture.jpg" style="width:110%" alt="brutalist building ">
+                <div class="mySlides fade">
+                    <img src="images/book.jpg" alt="open book">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/architecture.jpg" alt="brutalist building">
                 </div>
             </div>
             <div class="content-box">
                 <h2>Specialist lawyers</h2>
-                <p>We act for private and public sector clients, including local governments, resource companies, native title parties, land developers and individuals.</p>
-                <p>We prefer to develop long-term relationships with valued clients, built on respect and trust. We like to work closely with our clients and understand their goals and business.</p>
-                <p>Our fee structure is highly competitive for our specialist services. We are happy to talk about flexible fee structures to suit clients’ needs, including fixed fees in some area of our practice.</p>
-                <h3 class="section-title">Our Expertise</h3>
+                <p>
+                We act for private and public sector clients, including local governments, resource companies, native title parties, land developers and individuals.
+                <br>We prefer to develop long-term relationships with valued clients, built on respect and trust. We like to work closely with our clients and understand their goals and business.<br>
+                Our fee structure is highly competitive for our specialist services. We are happy to talk about flexible fee structures to suit clients’ needs, including fixed fees in some area of our practice.<br> Our work for our clients and in the community is driven by our values including trust, respect, community service, and constructiveness. See our values statement <a href="Under-construction.html">here</a>. <br>We pride ourselves on providing advice in plain English and with a commercial focus.</p>
+                <h3 class="expertise-title">Our Expertise</h3>
                 <ul class="expertise">
                     <li>Native title and Aboriginal heritage</li>
                     <li>Planning and environmental law</li>
                     <li>Local government law</li>
                     <li>Contracts and commercial law</li>
                 </ul>
-                <p>We work closely with networks of other law firms, particularly through our membership of the <a href="#">CGL Law Hub</a>. Our clients value our contribution to their businesses. See what clients say about us, and other rankings, <a href="#">here</a>.</p>
+                <p>We work closely with networks of other law firms, particularly through our membership of the <a href="Under-construction.html">CGL Law Hub</a>. Our clients value our contribution to their businesses. See what clients say about us, and other rankings, <a href="Under-construction.html">here</a>.</p>
             </div>
         </section>
 
@@ -100,14 +110,14 @@
                 <h2 class="section-title">Our Team</h2>
                 <div class="team-box">
                     <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Mark Gregory">
+                        <img src="https://via.placeholder.com/150" class="circle-img" alt="Mark Gregory">
                         <h3>Mark Gregory, Principal Lawyer</h3>
                         <p>BA/LLB</p>
                         <p>Mark is the founder and principal lawyer of M Gregory Legal, with over 30 years’ experience in public sector law, native title, planning and commercial law.</p>
-                        <a href="mark-gregory.html" class="more-info">More Info</a>
+                        <a href="Mark-more-info.html" class="more-info">More Info</a>
                     </div>
                     <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Emma Gregory">
+                        <img src="https://via.placeholder.com/150" class="circle-img" alt="Emma Gregory">
                         <h3>Emma Gregory, Office Manager</h3>
                         <p>[Qualifications - TBC]</p>
                         <p>Emma keeps the office running smoothly and pays the bills. When she is not working at M Gregory Legal she practices as a physiotherapist and Pilates therapist in private practice.</p>
@@ -122,7 +132,7 @@
                 <h2 class="section-title">Contact Us</h2>
                 <p>Phone: <span id="phone"></span></p>
                 <p>Email: <span id="email"></span></p>
-                <p>Connect: <a href="#">LinkedIn</a></p>
+                <p>Connect: <a href="Under-construction.html">LinkedIn</a></p>
                 <p>Address: Unit C4/118 Railway Street, West Perth WA 6005</p>
                 <div id="map"></div>
             </div>
@@ -135,89 +145,120 @@
         </div>
     </footer>
 
-<script>
-    // JavaScript for smooth header transition on scroll
-    window.onscroll = function() {scrollFunction()};
+    <script>
+        // JavaScript for smooth header transition on scroll
+        window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            document.getElementById("header").classList.add("scroll");
-        } else {
-            document.getElementById("header").classList.remove("scroll");
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("header").classList.add("scroll");
+            } else {
+                document.getElementById("header").classList.remove("scroll");
+            }
         }
-    }
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('header nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Smooth scrolling for logo link
+        document.querySelector('header .logo a').addEventListener('click', function(e) {
             e.preventDefault();
-
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
-    });
 
-    // Smooth scrolling for logo link
-    document.querySelector('header .logo a').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        // Toggle hamburger menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+            document.querySelector('.hamburger').classList.toggle('toggle');
+            document.querySelector('.close-btn').classList.toggle('visible');
         });
-    });
 
-    // Fade-in effect for h2 elements on scroll
-    const sections = document.querySelectorAll('section');
-    const options = {
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            }
-            entry.target.querySelector('h2').classList.add('fade-in');
-            observer.unobserve(entry.target);
+        // Close hamburger menu
+        document.querySelector('#close-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.remove('nav-active');
+            document.querySelector('.hamburger').classList.remove('toggle');
+            document.querySelector('.close-btn').classList.remove('visible');
         });
-    }, options);
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Anti-scraping measures for contact info
-    document.getElementById('phone').textContent = '(08) 9226 0375';
-    document.getElementById('email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
-
-    // Google Maps API
-    function initMap() {
-        var location = { lat: -31.9505, lng: 115.8605 }; // Coordinates for Perth, WA
-        var map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 14,
-            center: location
+        // Close hamburger menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('nav-active');
+                document.querySelector('.hamburger').classList.remove('toggle');
+                document.querySelector('.close-btn').classList.remove('visible');
+            });
         });
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
+
+        // Fade-in effect for h2 elements on scroll
+        const sections = document.querySelectorAll('section');
+        const options = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.querySelector('h2').classList.add('fade-in');
+                observer.unobserve(entry.target);
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
-    }
 
-    // Slideshow logic
-    let slideIndex = 0;
-    showSlides();
+        // Anti-scraping measures for contact info
+        document.getElementById('phone').textContent = '(08) 9226 0375';
+        document.getElementById('email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
 
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
+        // Google Maps API
+        function initMap() {
+            var location = { lat: -31.9505, lng: 115.8605 }; // Coordinates for Perth, WA
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
         }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
-        slides[slideIndex - 1].classList.add("active");
-        setTimeout(showSlides, 4000); // Change image every 4 seconds
-    }
-</script>
+
+        // Slideshow logic with smooth fade transition
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+                slides[i].classList.remove("fade-out");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { 
+                slideIndex = 1 
+            }
+            slides[slideIndex - 1].classList.add("active");
+            slides[slideIndex - 1].classList.add("fade-in");
+            if (slideIndex === 1) {
+                slides[slides.length - 1].classList.add("fade-out");
+            } else {
+                slides[slideIndex - 2].classList.add("fade-out");
+            }
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+    </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhS0p3uqye0umeR3EE-QV-bH2C4uokrwM&callback=initMap"></script>
 </body>

@@ -20,7 +20,7 @@
 
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 5px;
+    border-radius: 0; /* Remove rounded corners */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -43,7 +43,7 @@ body {
 header {
     background-color: #fff;
     color: #333;
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     z-index: 1000; /* Ensure header is on top */
@@ -116,20 +116,22 @@ section {
 .banner {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
-    padding-top: 100px;
+    margin-bottom: 10px; /* Adjusted to bring the image up */
+    padding-top: 80px; /* Adjusted to bring the image up */
 }
 
 .banner img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .service-nav {
     background-color: #f0f0f0;
-    padding: 5px 0; /* Adjusted padding */
+    padding: 5px 0; /* Adjust padding to shrink the gap */
     border-bottom: 1px solid #ccc;
     text-align: center;
+    margin-top: -20px; /* Adjust margin to further reduce the gap */
 }
 
 .service-nav h2 {
@@ -152,7 +154,6 @@ section {
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
-    border-radius: 0; /* Remove rounded corners */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
 }
 
@@ -226,4 +227,107 @@ a:active {
     font-family: 'Lora', serif;
     font-size: 2em;
     margin-bottom: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .service-description h1 {
+        font-size: 1.8em;
+    }
+    .service-description p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Hide the navigation options */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    
+    .logo {
+        margin: 0 auto; /* Center the logo */
+    }
+
+    .service-nav h2 {
+        font-size: 1.3em;
+    }
+
+    .service-description h1 {
+        font-size: 1.6em;
+    }
+    .service-description p {
+        font-size: 1em;
+    }
+
+    .contact h2 {
+        font-size: 2em;
+    }
+
+    .banner {
+        padding-top: 60px; /* Adjust padding to bring the image up */
+    }
+
+    .service-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-nav h2 {
+        font-size: 1.2em;
+    }
+
+    .service-description h1 {
+        font-size: 1.4em;
+    }
+    .service-description p {
+        font-size: 0.9em;
+    }
+
+    .contact h2 {
+        font-size: 1.8em;
+    }
+
+    .logo img {
+        max-width: 150px; /* Adjusted size for smaller screens */
+    }
+
+    header .logo {
+        font-size: 1em; /* Adjusted size for smaller screens */
+    }
+
+    .banner {
+        padding-top: 50px; /* Further adjustment to bring the image up */
+    }
+
+    .service-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-nav ul li {
+        margin: 5px 0;
+    }
+
+    .service-nav ul li a {
+        border: 1px solid #333; /* Add border to buttons on mobile */
+        border-radius: 0; /* Remove rounded corners */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    .banner img {
+        object-fit: contain; /* Adjust image fit */
+        height: auto;
+    }
 }

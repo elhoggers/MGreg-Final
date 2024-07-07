@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Native Title and Aboriginal Heritage - M Gregory Legal</title>
-    <link rel="stylesheet" href="Services.css">
+    <title>More Info - Mark Gregory</title>
+    <link rel="stylesheet" href="more-info.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -24,27 +24,23 @@
     </header>
 
     <main>
-        <!-- Banner Image -->
-        <section class="banner">
-            <img src="images/waterholeL.jpg" alt="Banner">
-        </section>
-
-        <!-- Service Navigation -->
-        <nav class="service-nav">
-            <h2>Services</h2>
-            <ul>
-                <li><a href="Service-Native-Title-Aboriginal-Heritage.html">Native Title</a></li>
-                <li><a href="Service-Planning-Environmental-Law.html">Planning &amp; Environmental</a></li>
-                <li><a href="Service-Local-Government-Law.html">Local Government</a></li>
-                <li><a href="Service-Contracts-Commercial-Law.html">Contracts &amp; Commercial</a></li>
-            </ul>
-        </nav>
-
-        <!-- Service Description -->
-        <section class="service-description">
-            <div class="container">
-                <h1>Native Title and Aboriginal Heritage</h1>
-                <p>We act for mining and energy companies, government entities, and Aboriginal groups in commercial aspects of native title and Aboriginal heritage law.</p>
+        <!-- Staff Info Section -->
+        <section class="staff-info">
+            <div class="staff-photo">
+                <img src="https://via.placeholder.com/150" alt="Mark Gregory">
+            </div>
+            <div class="staff-details">
+                <h1>Mark Gregory</h1>
+                <p>Mark founded M Gregory Legal in 2024, to build on his 30 years’ experience in public law, native title, planning and resources law.</p>
+                <p>Mark specialises in commercial aspects of public law and land access law, such as drafting native title contracts, advising local governments, advising on planning law and assisting with land compensation matters.</p>
+                <p>He also litigates in various specialist areas, including land compensation, planning (State Administrative Tribunal reviews), local government prosecutions and proceedings before the Mining Warden.</p>
+                <p>During the 1990s, Mark worked at the Aboriginal Legal Service of WA preparing Western Australia’s first litigated native title claim. In 1998 he joined a national firm, later becoming a partner at that firm and heading the Perth native title and local government practices.</p>
+                <p>Mark’s practice today focuses on the land access needs of his clients, including obtaining land tenure, mining tenements and approvals. He helps clients protect their property assets, and optimise the value of those assets, in areas such as planning, native title and other regulatory regimes.</p>
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> <a href="mailto:mark@mgregorylegal.com.au">mark@mgregorylegal.com.au</a></p>
+                <p><strong>Mobile:</strong> 0419 926 636</p>
+                <p><strong>Phone:</strong> (08) 9226 0375</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mark-gregory-63457322/">Mark Gregory</a></p>
             </div>
         </section>
 
@@ -68,26 +64,11 @@
     </footer>
 
     <script>
-document.querySelectorAll('header nav ul li a, .service-nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-
-        // Anti-scraping measures for contact info
         document.getElementById('phone').textContent = '(08) 9226 0375';
         document.getElementById('email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
 
-        // Google Maps API
         function initMap() {
-            var location = { lat: -31.9505, lng: 115.8605 }; // Coordinates for Perth, WA
+            var location = { lat: -31.9505, lng: 115.8605 };
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 14,
                 center: location
