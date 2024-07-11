@@ -16,7 +16,7 @@
                 <ul>
                     <li><a href="index.html#top">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#team">Team</a></li>
+                    <li><a href="staff.html">People</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -52,11 +52,9 @@
         <section id="contact" class="contact">
             <div class="content">
                 <h2 class="section-title">Contact Us</h2>
-                <p>Phone: <span id="phone"></span></p>
-                <p>Email: <span id="email"></span></p>
-                <p>Connect: <a href="#">LinkedIn</a></p>
+                <p>Phone: <span id="phone">(08) 9226 0375</span></p>
+                <p>Email: <span id="email"><a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a></span></p>
                 <p>Address: Unit C4/118 Railway Street, West Perth WA 6005</p>
-                <div id="map"></div>
             </div>
         </section>
     </main>
@@ -68,36 +66,21 @@
     </footer>
 
     <script>
-document.querySelectorAll('header nav ul li a, .service-nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth'
+        document.querySelectorAll('header nav ul li a, .service-nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
-        }
-    });
-});
-
+        });
 
         // Anti-scraping measures for contact info
         document.getElementById('phone').textContent = '(08) 9226 0375';
         document.getElementById('email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
-
-        // Google Maps API
-        function initMap() {
-            var location = { lat: -31.9505, lng: 115.8605 }; // Coordinates for Perth, WA
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 14,
-                center: location
-            });
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhS0p3uqye0umeR3EE-QV-bH2C4uokrwM&callback=initMap"></script>
 </body>
 </html>

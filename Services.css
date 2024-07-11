@@ -20,7 +20,7 @@
 
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 0; /* Remove rounded corners */
+    border-radius: 0; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -32,12 +32,12 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden; 
 }
 
 .logo img {
-    max-width: 300px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; 
+    height: auto; 
 }
 
 header {
@@ -46,27 +46,27 @@ header {
     padding: 10px 0;
     position: fixed;
     width: 100%;
-    z-index: 1000; /* Ensure header is on top */
+    z-index: 1000; 
     transition: background-color 0.3s ease;
     border-bottom: 1px solid #ccc;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: #333; /* Default color */
+    color: #333; 
     padding: 8px 12px;
-    border-radius: 0; /* Remove rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    border-radius: 0; 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 header nav ul li a:hover {
     background-color: #eee;
-    color: #333; /* Hover color */
-    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+    color: #333; 
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3); 
 }
 
 header.scroll {
-    background-color: rgba(255, 255, 255, 0.9); /* Transparent header on scroll */
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 header .container {
@@ -106,7 +106,7 @@ header nav ul li a:hover {
 }
 
 main {
-    padding-top: 80px; /* Adjust for fixed header */
+    padding-top: 80px; 
 }
 
 section {
@@ -116,8 +116,8 @@ section {
 .banner {
     width: 100%;
     height: auto;
-    margin-bottom: 10px; /* Adjusted to bring the image up */
-    padding-top: 80px; /* Adjusted to bring the image up */
+    margin-bottom: 10px; 
+    padding-top: 80px; 
 }
 
 .banner img {
@@ -128,10 +128,10 @@ section {
 
 .service-nav {
     background-color: #f0f0f0;
-    padding: 5px 0; /* Adjust padding to shrink the gap */
+    padding: 5px 0; 
     border-bottom: 1px solid #ccc;
     text-align: center;
-    margin-top: -20px; /* Adjust margin to further reduce the gap */
+    margin-top: -20px; 
 }
 
 .service-nav h2 {
@@ -154,12 +154,12 @@ section {
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .service-nav ul li a:hover {
     background-color: #ddd;
-    color: #333; /* Hover color */
+    color: #333; 
 }
 
 .service-description {
@@ -180,7 +180,7 @@ section {
 }
 
 .contact {
-    background-color: #c9c9c9; /* Darkest grey for Contact section */
+    background-color: #c9c9c9; 
 }
 
 .contact .content {
@@ -190,7 +190,7 @@ section {
 }
 
 .contact h2 {
-    font-family: 'Lora', serif; /* Change font to Lora */
+    font-family: 'Lora', serif; 
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -241,7 +241,7 @@ a:active {
 
 @media (max-width: 768px) {
     header nav ul {
-        display: none; /* Hide the navigation options */
+        display: none; 
     }
 
     .hamburger {
@@ -249,7 +249,7 @@ a:active {
     }
     
     .logo {
-        margin: 0 auto; /* Center the logo */
+        margin: 0 auto; 
     }
 
     .service-nav h2 {
@@ -268,7 +268,7 @@ a:active {
     }
 
     .banner {
-        padding-top: 60px; /* Adjust padding to bring the image up */
+        padding-top: 60px; 
     }
 
     .service-nav ul {
@@ -299,15 +299,15 @@ a:active {
     }
 
     .logo img {
-        max-width: 150px; /* Adjusted size for smaller screens */
+        max-width: 150px; 
     }
 
     header .logo {
-        font-size: 1em; /* Adjusted size for smaller screens */
+        font-size: 1em; 
     }
 
     .banner {
-        padding-top: 50px; /* Further adjustment to bring the image up */
+        padding-top: 50px; 
     }
 
     .service-nav ul {
@@ -321,13 +321,13 @@ a:active {
     }
 
     .service-nav ul li a {
-        border: 1px solid #333; /* Add border to buttons on mobile */
-        border-radius: 0; /* Remove rounded corners */
-        padding: 8px 12px; /* Adjust padding */
+        border: 1px solid #333; 
+        border-radius: 0; 
+        padding: 8px 12px; 
     }
 
     .banner img {
-        object-fit: contain; /* Adjust image fit */
+        object-fit: contain; 
         height: auto;
     }
 }
