@@ -386,14 +386,8 @@ footer {
     color: #fff;
 }
 
-.fade-in {
-    opacity: 1;
-    transition: opacity 0.6s ease-in-out;
-}
-
 h2 {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+    opacity: 1; /* Ensure visibility */
 }
 
 a {
@@ -550,3 +544,4 @@ a:active {
 .mySlides.active {
     z-index: 1;
 }
+

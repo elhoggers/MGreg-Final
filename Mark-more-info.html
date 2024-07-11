@@ -37,10 +37,10 @@
                 <p>During the 1990s, Mark worked at the Aboriginal Legal Service of WA preparing Western Australia’s first litigated native title claim. In 1998 he joined a national firm, later becoming a partner at that firm and heading the Perth native title and local government practices.</p>
                 <p>Mark’s practice today focuses on the land access needs of his clients, including obtaining land tenure, mining tenements and approvals. He helps clients protect their property assets, and optimise the value of those assets, in areas such as planning, native title and other regulatory regimes.</p>
                 <h2>Contact Information</h2>
-                <p><strong>Email:</strong> <a href="mailto:mark@mgregorylegal.com.au">mark@mgregorylegal.com.au</a></p>
-                <p><strong>Mobile:</strong> 0419 926 636</p>
-                <p><strong>Phone:</strong> (08) 9226 0375</p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mark-gregory-63457322/">Mark Gregory</a></p>
+                <p><strong>Email:</strong> <span id="mark-email"></span></p>
+                <p><strong>Mobile:</strong> <span id="mark-mobile"></span></p>
+                <p><strong>Phone:</strong> <span id="mark-phone"></span></p>
+                <p><strong>LinkedIn:</strong> <span id="mark-linkedin"></span></p>
             </div>
         </section>
 
@@ -48,11 +48,9 @@
         <section id="contact" class="contact">
             <div class="content">
                 <h2 class="section-title">Contact Us</h2>
-                <p>Phone: <span id="phone"></span></p>
-                <p>Email: <span id="email"></span></p>
-                <p>Connect: <a href="#">LinkedIn</a></p>
+                <p>Phone: <span id="contact-phone"></span></p>
+                <p>Email: <span id="contact-email"></span></p>
                 <p>Address: Unit C4/118 Railway Street, West Perth WA 6005</p>
-                <div id="map"></div>
             </div>
         </section>
     </main>
@@ -62,23 +60,27 @@
             <p>&copy; 2024 M Gregory Legal. All rights reserved.</p>
         </div>
     </footer>
-
     <script>
-        document.getElementById('phone').textContent = '(08) 9226 0375';
-        document.getElementById('email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
+        document.querySelectorAll('header nav ul li a, .service-nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-        function initMap() {
-            var location = { lat: -31.9505, lng: 115.8605 };
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 14,
-                center: location
-            });
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
+        // Anti-scraping measures for contact info
+        document.getElementById('mark-email').innerHTML = '<a href="mailto:mark@mgregorylegal.com.au">mark@mgregorylegal.com.au</a>';
+        document.getElementById('mark-mobile').textContent = '0419 926 636';
+        document.getElementById('mark-phone').textContent = '(08) 9226 0375';
+        document.getElementById('mark-linkedin').innerHTML = '<a href="https://www.linkedin.com/in/mark-gregory-63457322/">Mark Gregory</a>';
+
+        document.getElementById('contact-phone').textContent = '(08) 9226 0375';
+        document.getElementById('contact-email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhS0p3uqye0umeR3EE-QV-bH2C4uokrwM&callback=initMap"></script>
 </body>
 </html>
