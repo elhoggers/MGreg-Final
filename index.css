@@ -503,6 +503,20 @@ a:active {
     }
 }
 
+@media (max-width: 480px) {
+    header {
+        padding-top: 0;
+    }
+
+    main {
+        padding-top: 60px;
+    }
+
+    header .container {
+        padding: 10px;
+    }
+}
+
 /* Slideshow styles */
 .slideshow-container {
     position: relative;
