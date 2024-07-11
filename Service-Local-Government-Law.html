@@ -24,44 +24,39 @@
     </header>
 
     <main>
-        <div class="main-container">
-            <!-- Sidebar Navigation -->
-            <nav class="sidebar">
-                <h2>Services</h2>
-                <ul>
-                    <li><a href="Service-Native-Title-Aboriginal-Heritage.html">Native Title</a></li>
-                    <li><a href="Service-Planning-Environmental-Law.html">Planning &amp; Environmental</a></li>
-                    <li><a href="Service-Local-Government-Law.html">Local Government</a></li>
-                    <li><a href="Service-Contracts-Commercial-Law.html">Contracts &amp; Commercial</a></li>
-                </ul>
-            </nav>
+        <!-- Banner Image -->
+        <section class="banner">
+            <img src="images/peopleL.jpg" alt="Banner">
+        </section>
 
-            <!-- Content Area -->
-            <div class="content-area">
-                <!-- Banner Image -->
-                <section class="banner">
-                    <img src="images/peopleL.jpg" alt="Banner">
-                </section>
+        <!-- Service Navigation -->
+        <nav class="service-nav">
+            <h2>Services</h2>
+            <ul>
+                <li><a href="Service-Native-Title-Aboriginal-Heritage.html">Native Title</a></li>
+                <li><a href="Service-Planning-Environmental-Law.html">Planning &amp; Environmental</a></li>
+                <li><a href="Service-Local-Government-Law.html">Local Government</a></li>
+                <li><a href="Service-Contracts-Commercial-Law.html">Contracts &amp; Commercial</a></li>
+            </ul>
+        </nav>
 
-                <!-- Service Description -->
-                <section class="service-description">
-                    <div class="container">
-                        <h1>Local Government Law</h1>
-                        <p>We act for local governments and regional councils across Western Australia. We also advise individuals and businesses affected by local government decisions.</p>
-                    </div>
-                </section>
-
-                <!-- Contact Section -->
-                <section id="contact" class="contact">
-                    <div class="content">
-                        <h2 class="section-title">Contact Us</h2>
-                        <p>Phone: <span id="phone">(08) 9226 0375</span></p>
-                        <p>Email: <span id="email"><a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a></span></p>
-                        <p>Address: Unit C4/118 Railway Street, West Perth WA 6005</p>
-                    </div>
-                </section>
+        <!-- Service Description -->
+        <section class="service-description">
+            <div class="container">
+                <h1>Local Government Law</h1>
+                <p>We act for local governments and regional councils across Western Australia. We also advise individuals and businesses affected by local government decisions.</p>
             </div>
-        </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="content">
+                <h2 class="section-title">Contact Us</h2>
+                <p>Phone: <span id="phone">(08) 9226 0375</span></p>
+                <p>Email: <span id="email"><a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a></span></p>
+                <p>Address: Unit C4/118 Railway Street, West Perth WA 6005</p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -71,7 +66,7 @@
     </footer>
 
     <script>
-        document.querySelectorAll('header nav ul li a, .sidebar ul li a').forEach(anchor => {
+        document.querySelectorAll('header nav ul li a, .service-nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href.startsWith('#')) {
