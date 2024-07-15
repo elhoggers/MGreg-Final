@@ -51,24 +51,6 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 0; 
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
-}
-
-header nav ul li a:hover {
-    background-color: #eee;
-    color: #333; 
-    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3); 
-}
-
-header.scroll {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
 header .container {
     display: flex;
     justify-content: space-between;
@@ -92,21 +74,115 @@ header nav ul {
 
 header nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 header nav ul li a {
     text-decoration: none;
     color: #333;
     padding: 8px 12px;
-    transition: background-color 0.3s ease;
+    border-radius: 0; 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 header nav ul li a:hover {
     background-color: #eee;
+    color: #333; 
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3); 
 }
 
+header nav ul .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 10px 0;
+}
+
+header nav ul li:hover .dropdown {
+    display: block;
+}
+
+header nav ul .dropdown li {
+    margin: 0;
+}
+
+header nav ul .dropdown li a {
+    padding: 10px;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.nav-active li {
+    margin: 10px 0;
+}
+
+.nav-active .dropdown {
+    display: none;
+}
+
+.nav-active .services-dropdown:hover .dropdown {
+    display: block;
+}
+
+.toggle .hamburger div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .hamburger div:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle .hamburger div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.close-btn.visible {
+    display: block;
+}
+
+/* Original content styling */
 main {
-    padding-top: 150px; 
+    padding-top: 30px; /* Adjusted padding to avoid clipping */
 }
 
 section {
@@ -116,8 +192,8 @@ section {
 .banner {
     width: 100%;
     height: auto;
-    margin-bottom: 10px; 
-    padding-top: 80px; 
+    margin-bottom: 10px;
+    padding-top: 80px;
 }
 
 .banner img {
@@ -188,6 +264,7 @@ section {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    padding-top: 150px; /* Added more padding to the top */
 }
 
 .staff-photo {
@@ -309,6 +386,16 @@ a:active {
         padding-top: 60px; 
     }
 
+    .nav-active .dropdown {
+        display: none;
+    }
+
+    .nav-active .services-dropdown:hover .dropdown {
+        display: block;
+        position: static;
+        box-shadow: none;
+    }
+
     .service-nav ul {
         display: flex;
         flex-direction: column;
@@ -322,12 +409,17 @@ a:active {
     .staff-info {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px; 
+        padding-top: 150px; /* Added more padding to the top */
     }
 
     .staff-photo {
         padding-right: 0;
         margin-bottom: 20px;
+        order: 2; /* Move the image to the bottom */
+    }
+
+    .staff-details {
+        order: 1;
     }
 
     .contact h2 {
@@ -385,10 +477,10 @@ a:active {
     }
 
     main {
-        padding-top: 80px; 
+        padding-top: 120px; /* Adjusted padding to avoid clipping */
     }
 
     .staff-info {
-        padding-top: 80px;
+        padding-top: 150px; /* Added more padding to the top */
     }
 }

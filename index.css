@@ -159,12 +159,12 @@ section {
 }
 
 .about .main-photo {
-    width: 100vw; 
-    left: 50%; 
-    right: 50%; 
-    margin-left: -50vw; 
-    margin-right: -50vw; 
-    height: 350px; 
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 350px;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -182,11 +182,11 @@ section {
     top: 10%; /* Add more padding to the top */
     left: 2%;
     font-family: 'Lora', serif;
-    font-size: 1.8em; 
+    font-size: 1.8em;
     font-weight: bold;
     color: #fff;
-    padding-top: 20px; 
-    z-index: 2; 
+    padding-top: 20px;
+    z-index: 2;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     max-width: 90%;
 }
@@ -200,7 +200,7 @@ section {
 
 .about h2, .services h2, .team h2, .contact h2 {
     font-family: 'Lora', serif;
-    font-size: 2em; 
+    font-size: 2em;
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -420,7 +420,7 @@ a:active {
     }
 
     .about .main-photo-text {
-        font-size: 1.2em; 
+        font-size: 1.2em;
     }
 
     .team-box {
@@ -435,11 +435,19 @@ a:active {
     .services .container {
         padding-top: 20px;
     }
+
+    .logo img {
+        max-width: 300px; /* Increase max-width for mobile */
+    }
+
+    .close-btn.visible {
+        display: block; /* Show close button for mobile */
+    }
 }
 
 @media (max-width: 710px) {
     .about .main-photo-text {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .service-box {
@@ -458,7 +466,7 @@ a:active {
     .service img {
         width: 100%;
         height: auto;
-        max-width: 300px; /* Maintain the original width of the image */
+        max-width: 300px; /* Increase max-width for mobile */
     }
 
     .service-info {
@@ -485,15 +493,19 @@ a:active {
     }
 
     .logo img {
-        max-width: 150px; 
+        max-width: 300px; /* Increase max-width for smaller mobile devices */
     }
 
     header .logo {
-        font-size: 1em; 
+        font-size: 1.2em; /* Slightly increase font size for smaller mobile devices */
     }
 
     .small-title {
-        font-size: 1.2em; 
+        font-size: 1.2em;
+    }
+
+    .close-btn.visible {
+        display: block; /* Show close button for smaller mobile devices */
     }
 }
 
@@ -509,16 +521,29 @@ a:active {
     header .container {
         padding: 10px;
     }
+
+    .logo img {
+        max-width: 300px; /* Further increase max-width for smallest devices */
+    }
+
+    .about .main-photo-text {
+        top: 8%; /* Adjust top padding for smallest devices */
+        padding-top: 10px; /* Reduce padding for smallest devices */
+    }
+
+    .close-btn.visible {
+        display: block; /* Show close button for smallest devices */
+    }
 }
 
 /* Slideshow styles */
 .slideshow-container {
     position: relative;
-    width: 100vw; 
-    left: 50%; 
-    right: 50%; 
-    margin-left: -50vw; 
-    margin-right: -50vw; 
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     height: 350px;
     overflow: hidden;
 }
@@ -544,4 +569,3 @@ a:active {
 .mySlides.active {
     z-index: 1;
 }
-

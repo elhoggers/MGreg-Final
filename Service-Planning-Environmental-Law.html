@@ -11,13 +11,28 @@
 <body>
     <header id="header">
         <div class="container">
-            <div class="logo"><a href="index.html#top"><img src="images/MG-logo.png" alt="M Gregory Legal Logo"></a></div>
+            <div class="logo"><a href="index.html"><img src="images/MG-logo.png" alt="M Gregory Legal Logo"></a></div>
             <nav>
-                <ul>
-                    <li><a href="index.html#top">Home</a></li>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li class="services-dropdown">
+                        <a href="javascript:void(0)" id="services-dropdown-btn">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="Service-Native-Title-Aboriginal-Heritage.html">Native Title</a></li>
+                            <li><a href="Service-Planning-Environmental-Law.html">Planning &amp; Environmental</a></li>
+                            <li><a href="Service-Local-Government-Law.html">Local Government</a></li>
+                            <li><a href="Service-Contracts-Commercial-Law.html">Contracts &amp; Commercial</a></li>
+                        </ul>
+                    </li>
                     <li><a href="staff.html">People</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="close-btn" id="close-btn">&times;</div>
             </nav>
         </div>
     </header>
@@ -27,17 +42,6 @@
         <section class="banner">
             <img src="images/perth-cityL.jpg" alt="Banner">
         </section>
-
-        <!-- Service Navigation -->
-        <nav class="service-nav">
-            <h2>Services</h2>
-            <ul>
-                <li><a href="Service-Native-Title-Aboriginal-Heritage.html">Native Title</a></li>
-                <li><a href="Service-Planning-Environmental-Law.html">Planning &amp; Environmental</a></li>
-                <li><a href="Service-Local-Government-Law.html">Local Government</a></li>
-                <li><a href="Service-Contracts-Commercial-Law.html">Contracts &amp; Commercial</a></li>
-            </ul>
-        </nav>
 
         <!-- Service Description -->
         <section class="service-description">
@@ -65,21 +69,43 @@
     </footer>
 
     <script>
-        document.querySelectorAll('header nav ul li a, .service-nav ul li a').forEach(anchor => {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href.startsWith('#')) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
                     e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
+                    document.querySelector(targetId).scrollIntoView({
                         behavior: 'smooth'
                     });
+                } else {
+                    window.location.href = targetId;
                 }
             });
         });
 
-        // Anti-scraping measures for contact info
-        document.getElementById('phone').textContent = '(08) 9226 0375';
-        document.getElementById('email').innerHTML = '<a href="mailto:contact@mgregorylegal.com.au">contact@mgregorylegal.com.au</a>';
+        // Toggle hamburger menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+            document.querySelector('.hamburger').classList.toggle('toggle');
+            document.querySelector('.close-btn').classList.toggle('visible');
+        });
+
+        // Close hamburger menu
+        document.querySelector('#close-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.remove('nav-active');
+            document.querySelector('.hamburger').classList.remove('toggle');
+            document.querySelector('.close-btn').classList.remove('visible');
+        });
+
+        // Close hamburger menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('nav-active');
+                document.querySelector('.hamburger').classList.remove('toggle');
+                document.querySelector('.close-btn').classList.remove('visible');
+            });
+        });
     </script>
 </body>
 </html>

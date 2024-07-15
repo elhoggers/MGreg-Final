@@ -20,7 +20,6 @@
 
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 0; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -32,12 +31,12 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .logo img {
-    max-width: 300px; 
-    height: auto; 
+    max-width: 300px;
+    height: auto;
 }
 
 header {
@@ -46,27 +45,9 @@ header {
     padding: 10px 0;
     position: fixed;
     width: 100%;
-    z-index: 1000; 
+    z-index: 1000;
     transition: background-color 0.3s ease;
     border-bottom: 1px solid #ccc;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #333; 
-    padding: 8px 12px;
-    border-radius: 0; 
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-header nav ul li a:hover {
-    background-color: #eee;
-    color: #333; 
-    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3); 
-}
-
-header.scroll {
-    background-color: rgba(255, 255, 255, 0.9);
 }
 
 header .container {
@@ -92,21 +73,113 @@ header nav ul {
 
 header nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 header nav ul li a {
     text-decoration: none;
     color: #333;
     padding: 8px 12px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header nav ul li a:hover {
     background-color: #eee;
+    color: #333;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+}
+
+header nav ul .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 10px 0;
+}
+
+header nav ul li:hover .dropdown {
+    display: block;
+}
+
+header nav ul .dropdown li {
+    margin: 0;
+}
+
+header nav ul .dropdown li a {
+    padding: 10px;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.nav-active li {
+    margin: 10px 0;
+}
+
+.nav-active .dropdown {
+    display: none;
+}
+
+.nav-active .services-dropdown:hover .dropdown {
+    display: block;
+}
+
+.toggle .hamburger div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .hamburger div:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle .hamburger div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.close-btn.visible {
+    display: block;
 }
 
 main {
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
 section {
@@ -116,50 +189,14 @@ section {
 .banner {
     width: 100%;
     height: auto;
-    margin-bottom: 10px; 
-    padding-top: 80px; 
+    margin-bottom: 10px;
+    padding-top: 80px;
 }
 
 .banner img {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.service-nav {
-    background-color: #f0f0f0;
-    padding: 5px 0; 
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    margin-top: -20px; 
-}
-
-.service-nav h2 {
-    font-family: 'Lora', serif;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.service-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.service-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.service-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.service-nav ul li a:hover {
-    background-color: #ddd;
-    color: #333; 
 }
 
 .service-description {
@@ -180,7 +217,7 @@ section {
 }
 
 .contact {
-    background-color: #c9c9c9; 
+    background-color: #c9c9c9;
 }
 
 .contact .content {
@@ -190,7 +227,7 @@ section {
 }
 
 .contact h2 {
-    font-family: 'Lora', serif; 
+    font-family: 'Lora', serif;
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -230,35 +267,23 @@ a:active {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 1200px) {
-    .service-description h1 {
-        font-size: 1.8em;
-    }
-    .service-description p {
-        font-size: 1.1em;
-    }
-}
-
 @media (max-width: 768px) {
     header nav ul {
-        display: none; 
+        display: none;
     }
 
     .hamburger {
         display: flex;
     }
-    
-    .logo {
-        margin: 0 auto; 
-    }
 
-    .service-nav h2 {
-        font-size: 1.3em;
+    .logo {
+        margin: 0 auto;
     }
 
     .service-description h1 {
         font-size: 1.6em;
     }
+
     .service-description p {
         font-size: 1em;
     }
@@ -268,28 +293,25 @@ a:active {
     }
 
     .banner {
-        padding-top: 60px; 
+        padding-top: 60px;
     }
 
-    .service-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .nav-active .dropdown {
+        display: none;
     }
 
-    .service-nav ul li {
-        margin: 10px 0;
+    .nav-active .services-dropdown:hover .dropdown {
+        display: block;
+        position: static;
+        box-shadow: none;
     }
 }
 
 @media (max-width: 480px) {
-    .service-nav h2 {
-        font-size: 1.2em;
-    }
-
     .service-description h1 {
         font-size: 1.4em;
     }
+
     .service-description p {
         font-size: 0.9em;
     }
@@ -299,35 +321,14 @@ a:active {
     }
 
     .logo img {
-        max-width: 150px; 
+        max-width: 150px;
     }
 
     header .logo {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .banner {
-        padding-top: 50px; 
-    }
-
-    .service-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-nav ul li {
-        margin: 5px 0;
-    }
-
-    .service-nav ul li a {
-        border: 1px solid #333; 
-        border-radius: 0; 
-        padding: 8px 12px; 
-    }
-
-    .banner img {
-        object-fit: contain; 
-        height: auto;
+        padding-top: 50px;
     }
 }
